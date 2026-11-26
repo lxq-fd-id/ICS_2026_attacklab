@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Task 1: 构造 payload，劫持 input 的返回地址执行 ./malware。"""
+"""Task 1: 劫持 input 的返回地址执行 ./malware。"""
 import sys, struct
 
 p64 = lambda x: struct.pack("<Q", x)

